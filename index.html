@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+    
+    function setView(viewId) {
+      document.querySelectorAll(".view").forEach(v => v.style.display = "none");  
+      document.getElementById(viewId).style.display = "block";
+    }
+  </script>
+  
+  <style>
+    #mySidebar {
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #111; 
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    
+    #mySidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="mySidebar">
+     <a href="#" onclick="setView('home'); closeNav()">Home</a>
+     <a href="#" onclick="setView('about'); closeNav()">About</a>
+     <a href="#" onclick="setView('contact'); closeNav()">Contact</a>
+  </div>
+
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰ Open</button>  
+    
+    <!-- Page content -->
+    <div class="view" id="home">
+      <!-- Home content --> 
+    </div>
+    
+    <div class="view" id="about">
+      <!-- About content --> 
+    </div>
+    
+    <div class="view" id="contact">
+     <!-- Contact content -->
+    </div>
+  </div>
+  
+</body>
+</html>
